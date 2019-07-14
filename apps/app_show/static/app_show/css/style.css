@@ -1,0 +1,24 @@
+body {
+    background-color: #222831;
+}
+.outter-container {
+    padding: 50px;
+    background-color: #222831;
+}
+
+table {
+    border: 2px solid black;
+    color: white;
+}
+
+tr {
+    color: white;
+}
+
+.wh {
+    color: white;
+}
+
+.lb {
+    background-color: #00adb5;
+}
