@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app_show/css/style.css' %}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+    <title>Create</title>
+</head>
+
+<body>
+    <div class="outter-container">
+
+        <div class="container center_div">
+                <button type="button" class="btn lb hm"><a class="wh" href="/shows">Go Home</a></button>
+            <h1 class="wh">Add a New Show</h1>
+
+            <form class="cnt" action = "create_show" method = "POST" >
+                    {% csrf_token %}
+                <div class="form-row">
+                    <div class="form-group col-lg-6">
+                        <label for="inputTitle"></label>
+                        <input name = "title" type="text" class="form-control" id="inputTitle1" placeholder="Title">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-5">
+                        <label for="inputNetwork"></label>
+                        <input name = "network" type="text" class="form-control" id="inputNework" placeholder="Network">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputReleaseDate"></label>
+                        <input name = "release_date" type="date" class="form-control" id="datepicker" placeholder="Release Date">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-lg-6">
+                        <label for="inputTitle">Description</label>
+                        <textarea  name = "description" class="form-control" id="exampleFormControlTextarea1" rows="3"
+                            placeholder="Description"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn lb">Add a New Show</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

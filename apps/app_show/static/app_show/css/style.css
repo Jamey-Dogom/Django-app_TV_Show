@@ -22,3 +22,21 @@ tr {
 .lb {
     background-color: #00adb5;
 }
+
+.center_div{
+    margin: 0 auto;
+    width:80% /* value of your choice which suits your alignment */
+}
+
+.mgbt5 {
+    margin-bottom: 5%;
+}
+
+.mglt2 {
+    margin-left: 2%;
+}
+
+.hm {
+    float: right;
+    margin-right: 3%;
+}
