@@ -18,12 +18,18 @@
             $("#datepicker").datepicker();
         });
     </script>
-    <title>Create</title>
+    <title>Update</title>
 </head>
 
 <body>
     <div class="outter-container">
-
+            {% if messages %}
+            <ul class="messages rd">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
         <div class="container center_div">
                 <button type="button" class="btn lb hm"><a class="wh" href="/shows">Go Home</a></button>
             <h1 class="wh">Edit Show {{update_show.id}}</h1>

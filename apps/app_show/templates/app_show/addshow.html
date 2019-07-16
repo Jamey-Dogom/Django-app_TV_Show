@@ -25,31 +25,40 @@
     <div class="outter-container">
 
         <div class="container center_div">
-                <button type="button" class="btn lb hm"><a class="wh" href="/shows">Go Home</a></button>
+            <button type="button" class="btn lb hm"><a class="wh" href="/shows">Go Home</a></button>
             <h1 class="wh">Add a New Show</h1>
 
-            <form class="cnt" action = "create_show" method = "POST" >
-                    {% csrf_token %}
+            {% if messages %}
+            <ul class="messages rd">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+
+            <form class="cnt" action="create_show" method="POST">
+                {% csrf_token %}
                 <div class="form-row">
                     <div class="form-group col-lg-6">
                         <label for="inputTitle"></label>
-                        <input name = "title" type="text" class="form-control" id="inputTitle1" placeholder="Title">
+                        <input name="title" type="text" class="form-control" id="inputTitle1" placeholder="Title">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-5">
                         <label for="inputNetwork"></label>
-                        <input name = "network" type="text" class="form-control" id="inputNework" placeholder="Network">
+                        <input name="network" type="text" class="form-control" id="inputNework" placeholder="Network">
                     </div>
                     <div class="form-group col-md-3">
                         <label for="inputReleaseDate"></label>
-                        <input name = "release_date" type="date" class="form-control" id="datepicker" placeholder="Release Date">
+                        <input name="release_date" type="date" class="form-control" id="datepicker"
+                            placeholder="Release Date">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-lg-6">
                         <label for="inputTitle">Description</label>
-                        <textarea  name = "description" class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"
                             placeholder="Description"></textarea>
                     </div>
                 </div>
